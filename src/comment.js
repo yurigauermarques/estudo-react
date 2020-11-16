@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
-const author = {
-  avatarUrl: 'https://pm1.narvii.com/7410/7031751e3389d1a1a3a6be145d946a8d12aabdcbr1-519-922v2_00.jpg',
-  name: 'Yuri',
-  text: 'abobora voadora',
-  date: '2020-10-01'
+// const author = {
+//   avatarUrl: 'https://pm1.narvii.com/7410/7031751e3389d1a1a3a6be145d946a8d12aabdcbr1-519-922v2_00.jpg',
+//   name: 'Yuri',
+//   text: 'abobora voadora',
+//   date: '2020-10-01'
 
-}
+// }
 
 function Avatar(props) {
   return (
@@ -21,7 +21,7 @@ function Avatar(props) {
 }
 
 function UserInfo(props) {
-  return(
+  return (
     <div className="UserInfo">
       <Avatar user={props.user} />
       <div className="UserInfo-name">
@@ -32,7 +32,7 @@ function UserInfo(props) {
 }
 
 function Comment(props) {
-  return(
+  return (
     <div className="Comment">
       <UserInfo user={props.author} />
       <div className="Comment-text">
