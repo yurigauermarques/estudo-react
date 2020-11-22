@@ -9,6 +9,9 @@ import Blog from './Blog';
 import Toggle from './Toggle';
 import NumberList from './NumberList';
 import NameForm from './NameForm';
+import Calculator from './Calculator'
+
+
 
 function Applicacao() {
   const numbers = [1, 2, 3, 4, 5, 6];
@@ -24,6 +27,9 @@ function Applicacao() {
       <br />
       <br />
       <NameForm />
+      <br />
+      <br />
+      <Calculator />
       <br />
       <br />
       <Clock />
