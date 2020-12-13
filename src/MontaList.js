@@ -2,7 +2,7 @@ function ListItem(props) {
     return <li>{props.item}</li>;
 }
 
-function NumberList(props) {
+function MontaList(props) {
     const item = props.itens;
     const listItems = item.map((item) =>
         <ListItem key={item.toString()} item={item} />
@@ -16,4 +16,4 @@ function NumberList(props) {
 }
 
 
-export default NumberList;
+export default MontaList;

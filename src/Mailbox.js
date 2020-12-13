@@ -6,7 +6,7 @@ function Mailbox(props) {
             {unreadMessages.length > 0 &&
                 <h2>
                     You have {unreadMessages.length} unread messages.
-          </h2>
+                </h2>
             }
         </div>
     );

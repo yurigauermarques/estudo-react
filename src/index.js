@@ -7,56 +7,104 @@ import Clock from './Clock';
 import Page from './Page';
 import Blog from './Blog';
 import Toggle from './Toggle';
-import NumberList from './NumberList';
+import MontaList from './MontaList';
 import NameForm from './NameForm';
-import Calculator from './Calculator'
+import Calculator from './Calculator';
+import WelcomeDialog from './WelcomeDialog';
 
 
 
-function Applicacao() {
-  const numbers = [1, 2, 3, 4, 5, 6];
-  const letras = ['a', 'b', 'c', 'd'];
-  const posts = [
-    { id: 1, title: 'Hello World', content: 'Welcome to learning React!' },
-    { id: 2, title: 'Installation', content: 'You can install React from npm.' }
-  ];
+class Applicacao extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      numbers: [1, 2, 3, 4, 5, 6],
+      letras: ['a', 'b', 'c', 'd'],
+      posts: [
+        { id: 1, title: 'Hello World', content: 'Welcome to learning React!' },
+        { id: 2, title: 'Installation', content: 'You can install React from npm.' }
+      ],
+      menu: 'welcome-dialog'
+    };
 
-  return (
-    <div>
-      <LoginContol />
-      <br />
-      <br />
-      <NameForm />
-      <br />
-      <br />
-      <Calculator />
-      <br />
-      <br />
-      <Clock />
-      <br />
-      <br />
-      <Toggle />
-      <br />
-      <br />
-      <Page />
-      <br />
-      <br />
-      <NumberList itens={numbers} />
-      <NumberList itens={letras} />
-      <br />
-      <br />
-      <Blog posts={posts} />
-    </div>
-  );
+    this.handleMenuChange = this.handleMenuChange.bind(this);
+  }
+
+  handleMenuChange(e) {
+    this.setState({
+      menu: e.target.value
+    });
+  }
+
+  render() {
+    const menu = this.state.menu;
+    let exemplo;
+    switch (menu) {
+      case 'welcome-dialog':
+        exemplo = <WelcomeDialog />;
+        break;
+      case 'login-control':
+        exemplo = <LoginContol />;
+        break;
+      case 'name-form':
+        exemplo = <NameForm />;
+        break;
+      case 'calculator':
+        exemplo = <Calculator />;
+        break;
+      case 'clock':
+        exemplo = <Clock />;
+        break;
+      case 'toggle':
+        exemplo = <Toggle />;
+        break;
+      case 'page':
+        exemplo = <Page />;
+        break;
+      case 'number-list':
+        exemplo = <MontaList itens={this.state.numbers} />;
+        break;
+      case 'letra-list':
+        exemplo = <MontaList itens={this.state.letras} />;
+        break;
+      case 'blog':
+        exemplo = <Blog posts={this.state.posts} />
+        break;
+      default:
+        break;
+    }
+    return (
+      <div>
+        <div>
+          <label>
+            Selecione o exemplo:
+            <select name="exemplo" value={this.state.menu} onChange={this.handleMenuChange}>
+              <option value="welcome-dialog">WelcomeDialog</option>
+              <option value="login-control">LoginContol</option>
+              <option value="name-form">NameForm</option>
+              <option value="calculator">Calculator</option>
+              <option value="clock">Clock</option>
+              <option value="toggle">Toggle</option>
+              <option value="page">Page</option>
+              <option value="number-list">Lista numérica</option>
+              <option value="letra-list">Lista alfabética</option>
+              <option value="blog">Blog</option>
+            </select>
+          </label>
+        </div>
+        <div>
+          {exemplo}
+        </div>
+      </div >
+    );
+  }
 }
-function tick() {
-  ReactDOM.render(
-    <Applicacao />,
-    document.getElementById('root')
-  );
-}
 
-setInterval(tick, 1000);
+
+ReactDOM.render(
+  <Applicacao />,
+  document.getElementById('root')
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
