@@ -30,3 +30,4 @@
   - [Listas e Chaves](https://pt-br.reactjs.org/docs/lists-and-keys.html)
   - [Formulários](https://pt-br.reactjs.org/docs/forms.html)
   - [Elevando o State](https://pt-br.reactjs.org/docs/lifting-state-up.html)
+  - [Composição vs Herança](https://pt-br.reactjs.org/docs/composition-vs-inheritance.html)

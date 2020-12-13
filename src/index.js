@@ -11,8 +11,10 @@ import MontaList from './MontaList';
 import NameForm from './NameForm';
 import Calculator from './Calculator';
 import WelcomeDialog from './WelcomeDialog';
-
-
+import Contacts from './Contacts';
+import Chat from './Chat';
+import SplitPane from './SplitPane';
+import SignUpDialog from './SignUpDialog';
 
 class Applicacao extends React.Component {
   constructor(props) {
@@ -70,12 +72,25 @@ class Applicacao extends React.Component {
       case 'blog':
         exemplo = <Blog posts={this.state.posts} />
         break;
+      case 'split-pane':
+        exemplo = <SplitPane
+          left={
+            <Contacts />
+          }
+          right={
+            <Chat />
+          }
+        />
+        break;
+      case 'sign-up-dialog':
+        exemplo = <SignUpDialog />;
+        break;
       default:
         break;
     }
     return (
       <div>
-        <div>
+        <div className="Seletor">
           <label>
             Selecione o exemplo:
             <select name="exemplo" value={this.state.menu} onChange={this.handleMenuChange}>
@@ -89,10 +104,12 @@ class Applicacao extends React.Component {
               <option value="number-list">Lista numérica</option>
               <option value="letra-list">Lista alfabética</option>
               <option value="blog">Blog</option>
+              <option value="split-pane">SplitPane</option>
+              <option value="sign-up-dialog">SignUpDialog</option>
             </select>
           </label>
         </div>
-        <div>
+        <div className="Conteudo">
           {exemplo}
         </div>
       </div >

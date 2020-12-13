@@ -11,3 +11,35 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+
+.FancyBorder {
+  padding: 10px 10px;
+  border: 2px solid;
+}
+
+.FancyBorder-blue {
+  border-color: blue;
+}
+
+.Dialog-title {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.Dialog-message {
+  font-size: larger;
+}
+
+
+
+.Seletor {
+  padding: 10px 10px;
+  border: 2px solid;
+  font-size: large;
+}
+
+.Conteudo {
+  padding: 10px 10px;
+}

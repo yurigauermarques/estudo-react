@@ -1,23 +1,12 @@
 
-function FancyBorder(props) {
-    return (
-        <div className={'FancyBorder FancyBorder-' + props.color}>
-            {props.children}
-        </div>
-    );
-}
-
+import Dialog from './Dialog';
 
 function WelcomeDialog() {
     return (
-        <FancyBorder color="blue">
-            <h1 className="Dialog-title">
-                Bem Vindo
-        </h1>
-            <p className="Dialog-message">
-                Obrigado por visitar a nossa espaçonave!
-        </p>
-        </FancyBorder>
+        <Dialog
+            title="Bem Vindo"
+            message="Obrigado por visitar a nossa espaçonave!"
+        />
     )
 }
 
