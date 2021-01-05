@@ -31,3 +31,4 @@
   - [Formulários](https://pt-br.reactjs.org/docs/forms.html)
   - [Elevando o State](https://pt-br.reactjs.org/docs/lifting-state-up.html)
   - [Composição vs Herança](https://pt-br.reactjs.org/docs/composition-vs-inheritance.html)
+  - [Pensando do jeito React](https://pt-br.reactjs.org/docs/thinking-in-react.html)
