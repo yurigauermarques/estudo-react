@@ -15,6 +15,7 @@ import Contacts from './Contacts';
 import Chat from './Chat';
 import SplitPane from './SplitPane';
 import SignUpDialog from './SignUpDialog';
+import ProdutcSearchApp from './ProdutcSearchApp';
 
 class Applicacao extends React.Component {
   constructor(props) {
@@ -26,7 +27,7 @@ class Applicacao extends React.Component {
         { id: 1, title: 'Hello World', content: 'Welcome to learning React!' },
         { id: 2, title: 'Installation', content: 'You can install React from npm.' }
       ],
-      menu: 'welcome-dialog'
+      menu: 'product-table'
     };
 
     this.handleMenuChange = this.handleMenuChange.bind(this);
@@ -42,6 +43,9 @@ class Applicacao extends React.Component {
     const menu = this.state.menu;
     let exemplo;
     switch (menu) {
+      case 'product-table':
+        exemplo = <ProdutcSearchApp />;
+        break;
       case 'welcome-dialog':
         exemplo = <WelcomeDialog />;
         break;
@@ -94,6 +98,7 @@ class Applicacao extends React.Component {
           <label>
             Selecione o exemplo:
             <select name="exemplo" value={this.state.menu} onChange={this.handleMenuChange}>
+              <option value="product-table">Tabela de Produtos</option>
               <option value="welcome-dialog">WelcomeDialog</option>
               <option value="login-control">LoginContol</option>
               <option value="name-form">NameForm</option>

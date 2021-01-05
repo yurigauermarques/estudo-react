@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 5px;
 }
 
 code {
@@ -16,11 +17,28 @@ code {
 
 .FancyBorder {
   padding: 10px 10px;
-  border: 2px solid;
+  border: 1px solid;
+  margin: 2px;
 }
 
 .FancyBorder-blue {
   border-color: blue;
+}
+
+.FancyBorder-orange {
+  border-color: orange;
+}
+
+.FancyBorder-green {
+  border-color: green;
+}
+
+.FancyBorder-turquoise {
+  border-color: turquoise;
+}
+
+.FancyBorder-red {
+  border-color: red;
 }
 
 .Dialog-title {
@@ -43,3 +61,4 @@ code {
 .Conteudo {
   padding: 10px 10px;
 }
+
